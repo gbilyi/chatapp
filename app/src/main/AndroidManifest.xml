@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gordbilyi.chatapp">
+
+    <application
+        android:allowBackup="false"
+        android:name="com.gordbilyi.chatapp.ChatsApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.gordbilyi.chatapp.chats.ChatsActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme.OverlapSystemBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

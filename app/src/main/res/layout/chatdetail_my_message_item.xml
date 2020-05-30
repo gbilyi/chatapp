@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showDate"
+            type="boolean" />
+
+        <variable
+            name="message"
+            type="com.gordbilyi.chatapp.data.Message" />
+
+        <variable
+            name="viewmodel"
+            type="com.gordbilyi.chatapp.chatdetail.ChatDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date_separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/date_separator"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="6pt"
+            android:visibility="@{showDate ? View.VISIBLE : View.GONE}"
+            app:formattedDateSeparator="@{message.createdAt}"
+            tools:text="Today" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="60dp">
+
+            <TextView
+                android:id="@+id/message_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_message"
+                android:elevation="2dp"
+                android:padding="10dp"
+                android:text="@{message.payload}"
+                android:textColor="#fff"
+                android:textSize="8pt"
+                tools:text="Placeholder message" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:paddingStart="10dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="6pt"
+                app:formattedTimeOnly="@{message.createdAt}"
+                tools:text="12:05 pm"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
