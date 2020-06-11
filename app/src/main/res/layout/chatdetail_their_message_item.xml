@@ -34,7 +34,7 @@
             android:background="@drawable/date_separator"
             android:padding="8dp"
             android:textColor="@android:color/black"
-            android:textSize="6pt"
+            android:textSize="18sp"
             android:visibility="@{showDate ? View.VISIBLE : View.GONE}"
             app:formattedDateSeparator="@{message.createdAt}"
             tools:text="Today" />
@@ -66,9 +66,10 @@
                 android:layout_gravity="end"
                 android:paddingEnd="10dp"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="6pt"
+                android:textSize="12sp"
                 app:formattedTimeOnly="@{message.createdAt}"
-                tools:text="12:05 pm" />
+                tools:text="12:05 pm"
+                tools:ignore="RtlSymmetry" />
 
         </LinearLayout>
     </LinearLayout>
